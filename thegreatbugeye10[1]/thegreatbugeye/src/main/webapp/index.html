@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bug Eye - Bug Tracking System</title>
+    <style>
+        /* General body styling */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #1f4037, #99f2c8);
+            height: 100vh;
+            overflow: hidden;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px #000;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button-container a {
+            text-decoration: none;
+            color: white;
+            padding: 15px 30px;
+            background-color: #ff5722;
+            border-radius: 5px;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .button-container a:hover {
+            background-color: #e64a19;
+        }
+
+        /* Bug Animation Styling */
+        .bug {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: url('https://cdn-icons-png.flaticon.com/512/477/477162.png') no-repeat center center;
+            background-size: contain;
+            animation: move 10s linear infinite;
+        }
+
+        /* Keyframe for bug movement */
+        @keyframes move {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            25% {
+                transform: translate(300px, 150px) rotate(45deg);
+            }
+
+            50% {
+                transform: translate(-200px, 300px) rotate(90deg);
+            }
+
+            75% {
+                transform: translate(400px, -150px) rotate(135deg);
+            }
+
+            100% {
+                transform: translate(0, 0) rotate(180deg);
+            }
+        }
+
+        /* Footer styling */
+        footer {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to The Bug Eye</h1>
+    <h2>Your Ultimate Bug Tracking System</h2>
+
+    <!-- Button links -->
+    <div class="button-container">
+        <a href="login.jsp">Login</a>
+        <a href="signup.jsp">Sign Up</a>
+    </div>
+
+    <!-- Bug-like moving elements for animation -->
+    <div class="bug" style="top: 10%; left: 10%;"></div>
+    <div class="bug" style="top: 40%; left: 60%;"></div>
+    <div class="bug" style="top: 70%; left: 30%;"></div>
+    <div class="bug" style="top: 20%; left: 80%;"></div>
+
+    <footer>
+        &copy; 2024 The Bug Eye | Bug Tracking System
+    </footer>
+
+    <script>
+        // Create more moving bug-like objects dynamically
+        for (let i = 0; i < 6; i++) {
+            const bug = document.createElement('div');
+            bug.classList.add('bug');
+            bug.style.top = Math.random() * 100 + 'vh';
+            bug.style.left = Math.random() * 100 + 'vw';
+            document.body.appendChild(bug);
+        }
+    </script>
+</body>
+
+</html>
